@@ -1,0 +1,34 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.imgcon>
+   
+<div id="similar-product" class="carousel slide" data-ride="carousel">
+    @foreach (var item in Model)
+    {
+        <!-- Wrapper for slides -->
+    <div class="carousel-inner" style="margin-left:10px">
+        <div class="item active">
+            <img src="~/Areas/img/sanpham/@item.IMG1" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG2" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG3" alt="" style="width:20%;height:20%" />
+        </div>
+        <div class="item">
+            <img src="~/Areas/img/sanpham/@item.IMG1" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG2" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG3" alt="" style="width:20%;height:20%" />
+        </div>
+        <div class="item">
+            <img src="~/Areas/img/sanpham/@item.IMG1" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG2" alt="" style="width:20%;height:20%" />
+            <img src="~/Areas/img/sanpham/@item.IMG3" alt="" style="width:20%;height:20%" />
+        </div>
+    </div>
+        <!-- Controls -->
+        <a class="left item-control" href="#similar-product" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right item-control" href="#similar-product" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    
+    }
+
+</div>

@@ -1,0 +1,8 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.Thanh_toan
+     <div class="form-group">
+                @Html.LabelFor(model => model.PHUONGTHUC, "PHUONGTHUC", htmlAttributes: new { @class = "lable_chu" })
+                <div class="col-md-10">
+                    @Html.DropDownList("PHUONGTHUC", null, htmlAttributes: new { @class = "text" })
+                    <p> @Html.ValidationMessageFor(model => model.PHUONGTHUC, "", new { @class = "text-danger" })</p>
+                </div>
+            </div>

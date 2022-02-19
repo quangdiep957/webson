@@ -1,0 +1,81 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn muốn xóa sản phẩm này?</h3>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+<div class="au-card au-card--bg-blue au-card-top-countries m-b-30" style="width:360px;background-image:-webkit-linear-gradient(131deg, #396AF2 0%, #F2D 100%)">
+    <div class="au-card-inner">
+        <div class="table-responsive">
+            <table class="table table-top-countries">
+                <tbody>
+
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.TENSP)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.TENSP)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.GIA)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.GIA)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.THETICH)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.THETICH)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.TRANGTHAI)</td>
+
+                        <td class="text-right">      @Html.DisplayFor(model => model.TRANGTHAI)</td>
+                    </tr>
+                    <tr>
+                        <td>    @Html.DisplayNameFor(model => model.MOTA)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.MOTA)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.CAPDO)</td>
+
+                        <td class="text-right">   @Html.DisplayFor(model => model.CAPDO)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.MAMAU)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.MAMAU)</td>
+                    </tr>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.ANH)</td>
+
+                        <td class="text-right">  <img src="~/Areas/img/sanpham/@Html.DisplayFor(model => model.ANH)" style="width:20%;height:20%" /></td>
+                    <tr>
+                        <td>  @Html.DisplayNameFor(model => model.HSD)</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.HSD)</td>
+                    <tr>
+                        <td>   @Html.DisplayNameFor((model => model.LOAISP.TLSP))</td>
+
+                        <td class="text-right">  @Html.DisplayFor(model => model.LOAISP.TLSP))</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+.text{
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    width:400px;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 10px;
+
+}
+.lable_chu
+{
+    width: 100px;
+    color: black;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 15px;
+    
+}
+.text1{
+    width:400px;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid black;
+}

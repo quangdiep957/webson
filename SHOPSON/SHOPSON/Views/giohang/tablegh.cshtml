@@ -1,0 +1,65 @@
+﻿@model List<SHOPSON.Models.giohangct>
+<div class="table-responsive cart_info">
+    <table class="table table-condensed">
+        <thead>
+            <tr class="cart_menu">
+                <td style="text-align:center;" width="23%" class="image">Ảnh</td>
+                <td class="description"> Thông tin</td>
+                <td class="price">Giá</td>
+                <td class="quantity">Số Lượng</td>
+                <td class="total">Thành tiền</td>
+                <td style="text-align:center;" width="8%"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td class="cart_product">
+                        <a href=""><img src="~/Areas/img/sanpham/@item.sanpham.ANH " style="width:50%; margin-left:25px;" name="ANH"></a>
+                    </td>
+                    <td class="cart_description">
+                        <h4><a href="">@item.sanpham.TENSP</a></h4>
+                        <p>Web ID: @item.sanpham.MLSP</p>
+                        <input name="MASP" value="@item.sanpham.MASP" style="display:none" />
+                    </td>
+                    <td class="cart_price">
+                        <p>@item.sanpham.GIA.Value.ToString("N0")đ</p>
+                        <input name="GIA" value="@item.sanpham.GIA" style="display:none" />
+
+                    </td>
+
+                    <td class="cart_quantity">
+                        <input onclick="var result = document.getElementById('@item.sanpham.TENSP'); var qty = result.value; if( !isNaN(qty) &amp; qty > 1 ) result.value--;return false;" type='button' value='-' />
+                        <input id='@item.sanpham.TENSP' min='1' name='soluong' type='text' value="@item.soluong" style="width:50px" />
+                        <input onclick="var result = document.getElementById('@item.sanpham.TENSP'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' />
+                    </td>
+                    <td class="cart_total">
+                        <p class="cart_total_price" id="sumtong">@(item.soluong * item.sanpham.GIA)đ</p>
+                        <input name="THANHTIEN" value="@(item.soluong * item.sanpham.GIA)" style="display:none" />
+                    </td>
+                    <td class="cart_delete">
+                        <form action="/giohang/deleteitem" method="post">
+
+                            <input name="masp" value="@item.sanpham.MASP" style="display:none" />
+                            <button type="submit" class="cart_quantity_delete"><i class="fa fa-times"></i></button>
+
+                        </form>
+
+                    </td>
+
+
+                </tr>
+
+            }
+            <tr>
+                <td colspan="5" style="color:black; font-weight: 500; font-size:14pt;" align="right">Tổng thanh toán : <strong style="font-size:21pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @ViewBag.tong&nbsp;&nbsp; VNĐ</strong></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+

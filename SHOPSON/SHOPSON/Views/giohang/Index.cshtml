@@ -1,0 +1,475 @@
+﻿@model List<SHOPSON.Models.giohangct>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Trang chủ | SonBoss</title>
+    <link href="~/Models/layout/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Models/layout/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Models/layout/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Models/layout/css/price-range.css" rel="stylesheet">
+    <link href="~/Models/layout/css/animate.css" rel="stylesheet">
+    <link href="~/Models/layout/css/main.css" rel="stylesheet">
+    <link href="~/Models/layout/css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+    <header id="header">
+        <!--header-->
+        <div class="header_top">
+            <!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                <li><a href="#"><i class="fa fa-phone"></i> +84 911067145</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i>quangdiep957@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html"><img src="~/Models/layout/images/home/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="~/Models/layout/images/dot-orange.png" alt="" /></a>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                    Hà Nội
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Quảng Ninh</a></li>
+                                    <li><a href="#">Hà Nam</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
+                                <li><a href="@Url.Action("Index","thanhtoan")"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                <li><a href="@Url.Action("Index","giohang")"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                                @if (Session["NAMEKH"] == null)
+                                {
+                                    <li><a href="@Url.Action("Create","khachhang")"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                }
+                                else
+                                {
+                                    <li><a></a><i class="fa fa-user"></i>Xin chào:@Session["NAMEKH"]</li>
+                                    <li class="account-dropdown__footer">
+                                        <i class="zmdi zmdi-power"></i>@Html.ActionLink("Thoát", "Logout", "khachhang")
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle nav</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="@Url.Action("Index","Home")" class="active">Trang chủ</a></li>
+                                <li class="dropdown">
+                                    <a href="@Url.Action("Index","Detailsp")">Sản phẩm<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="">Sơn chống thấm</a></li>
+                                        <li><a href="">Sơn trang trí</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Cửa hàng<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="" )">Giới thiệu</a></li>
+                                        <li><a href="@Url.Action("Index","TINTUC")">Tin tức & sự kiện</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact-us.html">Liên hệ</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                            <input type="text" placeholder="Tìm kiếm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+    </header><!--/header-->
+
+
+    <section id="cart_items">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Shopping Cart</li>
+                </ol>
+            </div>
+            @Html.Action("tablegh", "giohang")
+        </div>
+    </section> <!--/#cart_items-->
+
+    <section id="do_action">
+        <div class="container">
+            <div class="heading">
+                <h3>Mời bạn thao tác tiếp </h3>
+                <p>Sử dụng vocher hoặc phiếu quà tặng</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="chose_area">
+                        <ul class="user_option">
+                            <li>
+                                <input type="checkbox">
+                                <label>Use Coupon Code</label>
+                            </li>
+                            <li>
+                                <input type="checkbox">
+                                <label>Use Gift Voucher</label>
+                            </li>
+                            <li>
+                                <input type="checkbox">
+                                <label>Estimate Shipping & Taxes</label>
+                            </li>
+                        </ul>
+                        <ul class="user_info">
+                            <li class="single_field">
+                                <label>Tỉnh</label>
+                                <select name="hometown">
+                                    <option value="1">An Giang</option>
+                                    <option value="2">Bà rịa – Vũng tàu</option>
+                                    <option value="3">Bắc Giang</option>
+                                    <option value="4">Bắc Kạn</option>
+                                    <option value="5">Bạc Liêu</option>
+                                    <option value="6">Bắc Ninh</option>
+                                    <option value="7">Bến Tre</option>
+                                    <option value="8">Bình Định</option>
+                                    <option value="9">Bình Dương</option>
+                                    <option value="10">Bình Phước</option>
+                                    <option value="11">Bình Thuận</option>
+                                    <option value="12">Cà Mau</option>
+                                    <option value="13">Cần Thơ</option>
+                                    <option value="14">Cao Bằng </option>
+                                    <option value="15">Đà Nẵng</option>
+                                    <option value="16">Đắk Lắk</option>
+                                    <option value="17">Đắk Nông</option>
+                                    <option value="18">Điện Biên</option>
+                                    <option value="19">Đồng Nai</option>
+                                    <option value="20">Đồng Tháp</option>
+                                    <option value="21">Gia Lai</option>
+                                    <option value="22">Hà Giang</option>
+                                    <option value="23">Hà Nam</option>
+                                    <option value="24">Hà Nội </option>
+                                    <option value="25">Hà Tĩnh</option>
+                                    <option value="26">Hải Dương</option>
+                                    <option value="27">Hải Phòng</option>
+                                    <option value="28">Hậu Giang</option>
+                                    <option value="29">Hòa Bình</option>
+                                    <option value="30">Hưng Yên</option>
+                                    <option value="31">Khánh Hòa</option>
+                                    <option value="32">Kiên Giang</option>
+                                    <option value="33">Kon Tum</option>
+                                    <option value="34">Lai Châu</option>
+                                    <option value="35">Lâm Đồng</option>
+                                    <option value="36">Lạng Sơn</option>
+                                    <option value="37">Lào Cai</option>
+                                    <option value="38">Long An</option>
+                                    <option value="39">Nam Định</option>
+                                    <option value="40">Nghệ An</option>
+                                    <option value="41">Ninh Bình</option>
+                                    <option value="42">Ninh Thuận</option>
+                                    <option value="43">Phú Thọ</option>
+                                    <option value="44">Phú Yên</option>
+                                    <option value="45">Quảng Bình</option>
+                                    <option value="46">Quảng Nam</option>
+                                    <option value="47">Quảng Ngãi</option>
+                                    <option value="48">Quảng Ninh</option>
+                                    <option value="49">Quảng Trị</option>
+                                    <option value="50">Sóc Trăng</option>
+                                    <option value="51">Sơn La</option>
+                                    <option value="52">Tây Ninh</option>
+                                    <option value="53">Thái Bình</option>
+                                    <option value="54">Thái Nguyên</option>
+                                    <option value="55">Thanh Hóa</option>
+                                    <option value="56">Thừa Thiên Huế</option>
+                                    <option value="57">Tiền Giang</option>
+                                    <option value="58">Thành phố Hồ Chí Minh</option>
+                                    <option value="59">Trà Vinh</option>
+                                    <option value="60">Tuyên Quang</option>
+                                    <option value="61">Vĩnh Long</option>
+                                    <option value="62">Vĩnh Phúc</option>
+                                    <option value="63">Yên Bái</option>
+                                </select>
+
+                            </li>
+                            <li class="single_field">
+                                <label>Huyện</label>
+                                <select>
+                                    <option>Thanh Liêm</option>
+                                    <option>TP Phủ Lý</option>
+                                    <option>Kim Bảng</option>
+                                    <option>Bình Lục</option>
+                                    <option>Duy Tiên</option>
+                                    <option>Lý Nhân</option>
+
+                                </select>
+
+                            </li>
+                            <li class="single_field zip-field">
+                                <label>Zip Code:</label>
+                                <input type="text">
+                            </li>
+                        </ul>
+                        <a></a>
+                        <a></a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="total_area">
+                        <ul>
+                            <li>Tổng sản phẩm <span id="sum">@ViewBag.sl</span></li>
+                            <li>Thuế VAT <span>0</span></li>
+                            <li>Shipping  <span>Free</span></li>
+                            <li>Thanh toán <span>@ViewBag.tong</span></li>
+                        </ul>
+                        <a class="btn btn-default update" href="">Update</a>
+                        <a class="btn btn-default check_out" href="@Url.Action("Index","thanhtoan")">Thanh Toán</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#do_action-->
+
+    <footer id="footer">
+        <!--Footer-->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="companyinfo">
+                            <h2><span>SON</span>BOSS</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/Models/layout/img/bg1.jpg" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>SONBOSS</p>
+                                <h2>24 DEC 2021</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/Models/layout/img/bg2.jpg" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>SONBOSS</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/Models/layout/img/bg4.jpg" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>SONBOSS</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/Models/layout/img/bg1.jpg" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>SONBOSS</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="address">
+                            <img src="~/Models/layout/images/home/map.png" alt="" />
+                            <p>
+                                Chi Nhánh Cửa Hàng Tại Việt Nam.
+                                (Hà Nội - Quảng Ninh - Hà Nam)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Dịch vụ</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Hỗ trợ Online</a></li>
+                                <li><a href="#">Liên hệ với chúng tôi</a></li>
+                                <li><a href="#">Tình trạng đơn hàng</a></li>
+                                <li><a href="#">Thay đổi địa điểm</a></li>
+                                <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Mục sản phẩm</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Sơn chống thấm</a></li>
+                                <li><a href="#">Sơn trang trí</a></li>
+                                <li><a href="#">Dụng cụ</a></li>
+                                <li><a href="#">Thẻ quà tặng</a></li>
+                                <li><a href="#">Voucher</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Chính sách</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Điều khoản sử dụng</a></li>
+                                <li><a href="#">Chính sách tư nhân</a></li>
+                                <li><a href="#">Chính sách hoàn trả</a></li>
+                                <li><a href="#">Hệ thống thanh toán</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Về chúng tôi</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Thông tin công ty</a></li>
+                                <li><a href="#">Nghề nghiệp</a></li>
+                                <li><a href="#">Vị trí cửa hàng</a></li>
+                                <li><a href="#">Bản quyền</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>Nhận thông báo từ chúng tôi</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Nhập địa chỉ email của bạn" />
+                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>
+                                    Nhận các bản cập nhật gần đây nhất từ
+                                    trang web của chúng tôi và thông báo đến bạn..
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2021 SonBOSS Inc. Đã đăng ký Bản quyền.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="https://www.facebook.com/hoangphuong193/">Hoàng Minh Phương</a></span></p>
+                </div>
+            </div>
+        </div>
+
+    </footer><!--/Footer-->
+
+
+
+
+    <script src="~/Models/layout/js/jquery.js"></script>
+    <script src="~/Models/layout/js/bootstrap.min.js"></script>
+    <script src="~/Models/layout/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Models/layout/js/price-range.js"></script>
+    <script src="~/Models/layout/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Models/layout/js/main.js"></script>
+
+</body>
+</html>

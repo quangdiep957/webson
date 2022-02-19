@@ -1,0 +1,64 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.LOAISP
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("EDIT", "LOAISP", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>LOAISP</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MLSP)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TLSP, htmlAttributes: new { @class = "lable_chu" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TLSP, new { htmlAttributes = new { @class = "text" } })
+                    @Html.ValidationMessageFor(model => model.TLSP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MANCC, "MANCC", htmlAttributes: new { @class = "lable_chu" })
+                <div class="col-md-10">
+                    @Html.DropDownList("MANCC", null, htmlAttributes: new { @class = "text" })
+                    @Html.ValidationMessageFor(model => model.MANCC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ANH, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.LabelFor(model => model.ANH, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="image" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+               
+            </div>
+        </div>
+    }
+
+</body>
+</html>

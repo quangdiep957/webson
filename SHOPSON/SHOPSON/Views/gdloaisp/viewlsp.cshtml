@@ -1,0 +1,16 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.LOAISP>
+<div id="Bangsp">
+    <h2 style="margin-left: 20px;">Danh Mục Sản Phẩm</h2>
+    @foreach(var item in Model)
+                {
+                    <div class="bao">
+                        <div class="danhmuc">
+                            <img src="~/Areas/img/loaisp/@item.ANH" style="width: 86%; margin: 8px 2px; height: 61%;" />
+                        </div>
+                        <p class="chinhchu">@item.TLSP</p>
+                    </div>
+                }
+
+
+
+</div>

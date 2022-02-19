@@ -1,0 +1,72 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.TINTUC
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("EDIT", "TINTUC", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>TINTUC</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOTA, htmlAttributes: new { @class = "lable_chu" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOTA, new { htmlAttributes = new { @class = "text" } })
+                @Html.ValidationMessageFor(model => model.MOTA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYDANG, htmlAttributes: new { @class = "lable_chu" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NGAYDANG, new { htmlAttributes = new { @class = "text" } })
+                @Html.ValidationMessageFor(model => model.NGAYDANG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ANH, htmlAttributes: new { @class = "lable_chu" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ANH, new { htmlAttributes = new { @class = "text" } })
+                <div class="col-md-10">
+                    <input type="file" name="image" />
+                </div>
+                <img src="~/Areas/img/sanpham/@Html.DisplayFor(model => model.ANH)" style="width:20%;height:10%;margin:4px 200px" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TIEUDE, htmlAttributes: new { @class = "lable_chu" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TIEUDE, new { htmlAttributes = new { @class = "text" } })
+                @Html.ValidationMessageFor(model => model.TIEUDE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TRANGTHAI, htmlAttributes: new { @class = "lable_chu" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TRANGTHAI)
+                    @Html.ValidationMessageFor(model => model.TRANGTHAI, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+}

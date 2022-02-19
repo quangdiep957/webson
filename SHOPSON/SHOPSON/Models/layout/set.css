@@ -1,0 +1,1363 @@
+
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            a{
+                text-decoration: none;
+            }
+            
+            #home {
+                width: 100%;
+                position: relative;
+                background-repeat: no-repeat;
+                height: 600px;
+                background-position: center;
+                background-size: cover;
+                overflow: hidden;
+                display: flex;
+            }
+            /* css slide */
+            
+            #setslide {
+                width: 100%;
+                height: 600px;
+                overflow: hidden;
+                position: absolute;
+            }
+            
+            .slide_show {
+                display: none;
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
+            /* menu  */
+            
+            #menu {
+                width: 100%;
+                margin-left: -40px;
+                height: 100px;
+                background-size: cover;
+                position: fixed;
+                z-index: 1;
+            }
+            
+            #chen {
+                background-color: lightgoldenrodyellow;
+                opacity: 0.5;
+                width: 100%;
+                height: 100px;
+                position: absolute;
+            }
+            
+            #chen2 {
+                position: relative;
+            }
+            
+            #Logo {
+                background-image: url(https://www.sonboss.vn/pictures/catalog/logo/logo.png);
+                display: block;
+                width: 280px;
+                height: 60px;
+                margin: 35px 20px;
+                position: absolute;
+                background-repeat: no-repeat;
+            }
+            
+            #logo2 {
+                background-image: url(https://www.sonboss.vn/pictures/catalog/logo/dot-orange.png);
+                width: 104px;
+                height: 53px;
+                margin: 30px 300px;
+                position: absolute;
+                background-repeat: no-repeat;
+            }
+            
+            #tb1 {
+                margin-left: 470px;
+            }
+            
+            #imghome {
+                position: relative;
+                left: -50px;
+            }
+            
+            .tb1:hover {
+                color: blue;
+            }
+            
+            ul {
+                list-style: none;
+            }
+            
+            .tb1 {
+                cursor: pointer;
+                color: darkred;
+                float: left;
+                margin: 50px 20px;
+            }
+            
+            .menudn {
+                display: none;
+                margin: 10px 20px;
+                position: absolute;
+            }
+            
+            #menu_id5:hover .menudn {
+                display: block;
+            }
+            
+            #img1 {
+                position: relative;
+                margin: 103px 270px;
+            }
+            #text1{
+                width: 400px;
+                margin: -38px 592px;
+            }
+            
+            #icon {
+                position: relative;
+                margin: -253px 1040px;
+                top: 31px;
+                color: darkred;
+            }
+            /* css menu drop */
+            
+            .drop-down2 {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .nut_dropdown {
+                color: white;
+                font-size: 16px;
+                margin-top: 3px;
+                border: none;
+            }
+            
+            .noidung_dropdown {
+                /*Ẩn nội dung các đường dẫn sản phẩm*/
+                display: none;
+                position: absolute;
+                min-width: 120px;
+                margin: 0 -70px;
+                background-color: #a20b46;
+                z-index: 10;
+            }
+            /* Thiết kế style cho các đường dẫn trong Dropdown sản phẩm */
+            
+            .noidung_dropdown a {
+                text-align: center;
+                height: 65px;
+                display: block;
+                line-height: 65px;
+            }
+            /* Thiết kế style cho các đường dẫn trong Dropdown */
+            
+            .noidung_dropdown a:hover {
+                background-color: #d7d6d6;
+            }
+            /* hiển thị nội dung dropdown khi hover */
+            
+            .drop-down2:hover .noidung_dropdown {
+                display: block;
+            }
+            /* Thay đổi màu background cho nút khi được hover */
+            
+            .drop-down2:hover .nut_dropdown {
+                background-color: none;
+            }
+            /* next back */
+            
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+            /* Position the "next button" to the right */
+            
+            .next {
+                right: 60px;
+            }
+            
+            .prev {
+                left: 10px;
+            }
+            /* On hover, add a black background color with a little bit see-through */
+            
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            
+            .dot {
+                cursor: pointer;
+                height: 23px;
+                width: 23px;
+                margin: 100px 0px;
+                z-index: 1;
+            }
+            
+            .dot1 {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            /* css sale */
+            #body1{
+                height:350px;
+                width: 100%;
+                margin:30px 0px;
+                background-color:white;
+            }
+            .slide {
+                height: 250px;
+                position: absolute;
+                margin-left: 73px;
+                width: 90%;
+                box-shadow: 0px 0px 2px gainsboro;
+            }
+            
+            #show_class {
+                position: relative;
+                width: 100%;
+                margin-top: 2px;
+            }
+            
+            .sp {
+                /* display: inline-flex; */
+                float: left;
+                width: 207px;
+                height: 250px;
+                border: 1px solid white;
+                background-position: center;
+                background-color: white;
+                background-size: 150px;
+                background-repeat: no-repeat;
+                left: 30px;
+                position: relative;
+            }
+            
+            .sp:hover {
+                background-color: #f3f3f3;
+            }
+            
+            #ttsp1 {
+                background-image: url("img/sb02.png");
+            }
+            
+            #ttsp2 {
+                background-image: url("sb01.png");
+            }
+            
+            #ttsp3 {
+                background-image: url("img/sb11.png");
+            }
+            
+            #ttsp4 {
+                background-image: url("img/sonb.png");
+            }
+            
+            #ttsp5 {
+                background-image: url("img/sb21.png");
+            }
+            
+            #ttsp6 {
+                background-image: url("img/sb31.png");
+            }
+            
+            #ttsp7 {
+                background-image: url("img/sonb.png");
+            }
+            
+            #ttsp8 {
+                background-image: url("img/snt.png");
+            }
+            
+            #ttsp9 {
+                background-image: url("img/sb32.png");
+            }
+            
+            #ttsp10 {
+                background-image: url("img/bb.png");
+            }
+            
+            #ttsp11 {
+                background-image: url("img/bot.png");
+            }
+            
+            #ttsp12 {
+                background-image: url("img/sb31.png");
+            }
+            
+            .sale {
+                background-color: rgb(255, 66, 78);
+                color: rgb(255, 255, 255);
+                font-size: 13px;
+                line-height: 20px;
+                width: 50px;
+                position: relative;
+                z-index: 3;
+                top: 0px;
+                left: 0px;
+                border-radius: 4px 0px 26px;
+                padding: 2px 8px 4px 2px;
+            }
+            /* css danh muc san pham */
+            
+            #Bangsp {
+                background-color: white;
+                border: 1px solid white;
+                height: 260px;
+                border-radius: 10px;
+                width: 100%;
+            }
+            
+            .danhmuc {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background-position: center;
+                margin: 20px auto;
+                border-radius: 40px;
+                position: relative;
+                left: 25px;
+                background-color: #f3f3f3;
+            }
+            
+            .bao {
+                width: 150px;
+                height: 150px;
+                float: left;
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+            
+            #dmsp1 {
+                background-image: url("img/snt.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp2 {
+                background-image: url("img/sonb.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp3 {
+                background-image: url("img/bb.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp4 {
+                background-image: url("img/bot.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp5 {
+                background-image: url("img/cc.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp6 {
+                background-image: url("img/da.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp7 {
+                background-image: url("img/pmtd.png");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            #dmsp8 {
+                background-image: url("img/1_a1c0ff1c8dc94e81828f0ef27228f6b2_master.jpg");
+                background-size: 70px;
+                background-repeat: no-repeat;
+            }
+            
+            .chinhchu {
+                text-align: center;
+                margin: 10px 50px;
+                font-size: 10px;
+            }
+            /* css anhdong */
+            
+            #anhdong {
+                height: 300px;
+            }
+            
+            .chuyendong {
+                width: 200px;
+                opacity: 1;
+            }
+            /* css danh muc */
+            
+            .thumb {
+                width: 48px;
+                height: 48px;
+                margin: 0px 10px;
+            }
+            
+            .dm {
+                float: left;
+                margin: 35px 20px;
+                width: 90px;
+                height: 50px;
+            }
+            /* css gợi ý */
+            
+            .hot {
+                float: left;
+                width: 220px;
+                height: 340px;
+                background-position: center;
+                position: relative;
+                left: 25px;
+                top: 54px;
+                background-color: white;
+                background-size: 150px;
+                background-repeat: no-repeat;
+            }
+            
+            .seticon {
+                margin: 5px 45px;
+            }
+            
+            .sale20 {
+                font-size: 13px;
+                line-height: 20px;
+                border-radius: 2px;
+                background: rgb(255, 66, 78);
+                color: white;
+                padding: 0px 2px;
+                width: 30px;
+                height: 20px;
+            }
+            
+            #afterimg::after {
+                content: "";
+                position: absolute;
+                margin: 92px -220px;
+                /* left: 530px; */
+                width: 150px;
+                height: 2px;
+                background-color: #a20b46;
+            }
+            
+            #setheight {
+                height: 1225px;
+                width: 100%;
+                background-color: white;
+            }
+            
+            .hot:hover {
+                background-color: #f3f3f3;
+                cursor: pointer;
+            }
+            
+            #sphn1 {
+                background-image: url(img/BOSS-CLEAN-MAXIMUM.png);
+            }
+            
+            #sphn2 {
+                background-image: url(img/BOSS-MATT-FINISH.png);
+            }
+            
+            #sphn4 {
+                background-image: url(img/BB-BLON-Future-Exterior-4.375L.png);
+            }
+            
+            #sphn5 {
+                background-image: url(img/BB-BLON-Ext-Climacoat-4375L.png);
+            }
+            
+            #sphn6 {
+                background-image: url(img/18-SONBOSS-LUXE-INTERIOR-PRO-ODORLESS-FINISH-4375L-1.png);
+            }
+            
+            #sphn8 {
+                background-image: url(img/SONBOSS-SUPER-SATIN-EXTERIOR-4375L.png);
+            }
+            
+            #sphn9 {
+                background-image: url(img/SONBOSS-PUTTY-INTERIOR.png);
+            }
+            
+            #sphn10 {
+                background-image: url(img/SB44-1KG.png);
+            }
+            
+            #sphn11 {
+                background-image: url(img/SB13-5KG.png);
+            }
+            
+            #sphn12 {
+                background-image: url(img/HIPOZ-EXT-ALKALI-SEALER-18L.png);
+            }
+            
+            #sphn13 {
+                background-image: url(img/SPRING-POWDER-PUTTY-FOR-INT-NEW.png);
+            }
+            
+            #sphn14 {
+                background-image: url(img/sonbossunghocovidthumb.jpg);
+            }
+            
+            #sphn15 {
+                background-image: url(img/SONBOSS-STOP-ONE-EXTERIOR-4375L.png);
+            }
+            
+            #sphn16 {
+                background-image: url(img/SONBOSS-LUXE-WALL-FILLER-INTERIOR.png);
+            }
+            
+            #sphn17 {
+                background-image: url(img/sb02.png);
+            }
+            
+            #sphn7 {
+                background-image: url(img/sb31.png);
+            }
+            
+            #sphn18 {
+                background-image: url(img/bot.png);
+            }
+            
+            #sphn19 {
+                background-image: url(img/Boss-super-satin.png);
+            }
+            
+            #sphn20 {
+                background-image: url(img/sb11.png);
+            }
+            
+            .add {
+                display: none;
+            }
+            
+            .btnadd:hover {
+                cursor: pointer;
+            }
+            
+            .fonts {
+                text-align: center;
+                margin-top: 10px;
+                color: #a20b46;
+            }
+            /* css nhập imail */
+            
+.section-6 {
+    width: 100%;
+}
+
+.sub-section {
+    width: 1250px;
+    height: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sub-item {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.sub-item-img img{
+
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+}
+
+.desc {
+    margin: 20px 0 20px;
+}
+
+.sub-item p {
+    font-size: 25px;
+    font-weight: 700;
+    color: #a20b46;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.login-form input {
+    height: auto;
+    width: 30%;
+    padding-left: 10px;
+    font-size: 18px;
+    outline: none;
+    border: 0;
+    border: 1px solid;
+}
+
+.login-form button {
+    height: auto;
+    width: 20%;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(79, 79, 79, .68);
+    border-radius: 3px;
+    border: 1px solid #3949AB;
+    transition: .5s;
+}
+
+.login-form button a {
+    color: #a20b46;
+    font-size: 18px;
+}
+#cvan{
+    width: 381px;
+    height: 600px;
+    float: right;
+    background-color: aliceblue;
+    z-index: 1;
+    margin: -600px 10px;
+    position: relative;
+
+}
+.choncvan{
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+.choncvan:hover{
+ 
+    background-color: gray;
+}
+
+            /* css tin tức sự kiện */
+            /* css footer */
+            
+            .ht {
+                margin: 10px 80px;
+                font-weight: bold;
+                color: white;
+                float: left;
+            }
+            
+            .pa {
+                margin-top: 10px;
+                color: white;
+                font-size: 13px;
+            }
+            
+            .menuft {
+                margin: 20px -100px;
+                
+                font-weight: bold;
+                color: white;
+            }
+            #menua{
+                margin-left: 1300px;
+                cursor: pointer;
+            }
+    
+        
+            /* Chinh width */
+            @media screen and (max-width :1250px) and (min-width:1000px) {
+              
+                
+                #home {
+                    width: 100%;
+                    position: relative;
+                    background-repeat: no-repeat;
+                    height: 600px;
+                    background-position: center;
+                    background-size: cover;
+                    overflow: hidden;
+                    display: flex;
+                }
+                /* css slide */
+                
+                #setslide {
+                    width: 100%;
+                    height: 600px;
+                    overflow: hidden;
+                    position: absolute;
+                }
+                
+                .slide_show {
+                    display: none;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                }
+                /* menu  */
+                
+                #menu {
+                    width: 100%;
+                    margin-left: -40px;
+                    height: 100px;
+                    background-size: cover;
+                    position: fixed;
+                    z-index: 1;
+                }
+               
+                
+               
+                #tb1 {
+                    margin-left: 370px;
+                }
+                
+                #imghome {
+                    position: relative;
+                    left: -16px;
+                }
+                
+               
+                
+                .tb1 {
+                    cursor: pointer;
+                    color: darkred;
+                    float: left;
+                    margin: 50px 10px;
+                }
+                
+               
+               
+                #text1{
+                    width: 333px;
+                    margin: -41px 592px;
+                }
+                
+                #img1 {
+                    position: relative;
+                    margin: 109px 172px;
+                }
+
+            
+                /* css menu drop */
+               
+                .next {
+                    right: 60px;
+                    top:150px
+                }
+                
+                .prev {
+                    left: 10px;
+                    top:150px
+                }
+                /* On hover, add a black background color with a little bit see-through */
+                
+                .prev:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+                
+               
+                /* css sale */
+                #body1{
+                    height:650px;
+                    width: 100%;
+                    margin:30px 0px;
+                    background-color:white;
+                }
+                .slide {
+                    height: 514px;
+                    position: absolute;
+                    margin-left: 58px;
+                    width: 90%;
+                    box-shadow: 0px 0px 2px gainsboro;
+                }
+                
+                
+                
+                
+                #show_class {
+                    position: relative;
+                    width: 100%;
+                    margin-top: 2px;
+                }
+                
+                .sp {
+                    /* display: inline-flex; */
+                    float: left;
+                    width: 318px;
+                    height: 253px;
+                    border: 1px solid white;
+                    background-position: center;
+                    background-color: white;
+                    background-size: 150px;
+                    background-repeat: no-repeat;
+                    left: 48px;
+                    position: relative;
+                }
+                
+                .sp:hover {
+                    background-color: #f3f3f3;
+                }
+                
+            
+                .sale {
+                    background-color: rgb(255, 66, 78);
+                    color: rgb(255, 255, 255);
+                    font-size: 13px;
+                    line-height: 20px;
+                    width: 50px;
+                    position: relative;
+                    z-index: 3;
+                    top: 0px;
+                    left: 0px;
+                    border-radius: 4px 0px 26px;
+                    padding: 2px 8px 4px 2px;
+                }
+                /* css danh muc san pham */
+                
+                #Bangsp {
+                    background-color: white;
+                    border: 1px solid white;
+                    height: 260px;
+                    border-radius: 10px;
+                    width: 100%;
+                }
+                
+                .danhmuc {
+                    float: left;
+                    width:80px;
+                    height: 80px;
+                    background-position: center;
+                    margin: 20px auto;
+                    border-radius: 40px;
+                    position: relative;
+                    left: 25px;
+                    background-color: #f3f3f3;
+                    
+                }
+                
+                .bao {
+                    width: 107px;
+                    height: 128px;
+                    float: left;
+                    margin: 0px 15px;
+                    cursor: pointer;
+                }
+                
+                #dmsp1 {
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                    background-image: url("img/snt.png");
+                  
+                }
+                
+                #dmsp2 {
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                    background-image: url("img/sonb.png");
+                   
+                }
+                
+                #dmsp3 {
+                    background-image: url("img/bb.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp4 {
+                    background-image: url("img/bot.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp5 {
+                    background-image: url("img/cc.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp6 {
+                    background-image: url("img/da.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp7 {
+                    background-image: url("img/pmtd.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp8 {
+                    background-image: url("img/1_a1c0ff1c8dc94e81828f0ef27228f6b2_master.jpg");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                .chinhchu {
+                    text-align: center;
+                    margin: 10px 19px;
+                    font-size: 10px;
+                }
+                /* css anhdong */
+                
+                #anhdong {
+                    height: 300px;
+                }
+                
+                .chuyendong {
+                    width: 200px;
+                    opacity: 1;
+                }
+                /* css danh muc */
+                
+                .thumb {
+                    width: 48px;
+                    height: 48px;
+                    margin: 0px 10px;
+                }
+                
+                .dm {
+                    float: left;
+                    margin: 35px 7px;
+                    width: 90px;
+                    height: 50px;
+                }
+                /* css gợi ý */
+                
+                .hot {
+                    float: left;
+                    width: 172px;
+                    height: 368px;
+                    background-position: center;
+                    position: relative;
+                    left: 25px;
+                    top: 54px;
+                    background-color: white;
+                    background-size: 114px;
+                    background-repeat: no-repeat;
+                }
+                
+                .seticon {
+                    margin: -4px 45px;
+                }
+                
+                .sale20 {
+                    font-size: 13px;
+                    line-height: 20px;
+                    border-radius: 2px;
+                    background: rgb(255, 66, 78);
+                    color: white;
+                    padding: 0px 2px;
+                    width: 30px;
+                    height: 20px;
+                }
+                
+                #afterimg::after {
+                    content: "";
+                    position: absolute;
+                    margin: 92px -220px;
+                    /* left: 530px; */
+                    width: 150px;
+                    height: 2px;
+                    background-color: #a20b46;
+                }
+                
+                #setheight {
+                    height: 894px;
+                    width: 100%;
+                    background-color: white;
+                }
+                
+            .ht {
+                margin: 10px 60px;
+                font-weight: bold;
+                color: white;
+                float: left;
+            }
+            
+            .pa {
+                margin-top: 10px;
+                color: white;
+                font-size: 13px;
+            }
+            
+            .menuft {
+                margin-top: 20px;
+                margin-left: -300px;
+                font-weight: bold;
+                color: white;
+            }
+          
+                
+              
+                /* css nhập imail */
+            }
+            @media screen and (max-width :500px) and (min-width:200px) {
+                #home {
+                    width: 100%;
+                    position: relative;
+                    background-repeat: no-repeat;
+                    height: 400px;
+                    background-position: center;
+                    background-size: cover;
+                    overflow: hidden;
+                    display: flex;
+                }
+                #Logo {
+                    background-image: url(https://www.sonboss.vn/pictures/catalog/logo/logo.png);
+                    display: block;
+                    width: 280px;
+                    height: 60px;
+                    background-size: 80px;
+                    margin: 35px 20px;
+                    position: absolute;
+                    background-repeat: no-repeat;
+                }
+                
+                #logo2 {
+                    background-image: url(https://www.sonboss.vn/pictures/catalog/logo/dot-orange.png);
+                    width: 104px;
+                    height: 53px;
+                    background-size: 17px;
+                    margin: 30px 127px;
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-size: 43px;
+                }
+                #chen {
+                    background-color: lightgoldenrodyellow;
+                    opacity: 0.5;
+                    width: 100%;
+                    height:50px;
+                    position: absolute;
+                }
+                #tbhome{
+                    display: block;
+                }
+                #tbmenu{
+                    display: block;
+                }
+                
+                /* css slide */
+                
+                #setslide {
+                    width: 100%;
+                    height: 400px;
+                    overflow: hidden;
+                    position: absolute;
+                }
+                
+                .slide_show {
+                    display: none;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                }
+                /* menu  */
+                
+                #menu {
+                    width: 100%;
+                    margin-left: -40px;
+                    height: 50px;
+                    background-size: cover;
+                    position: fixed;
+                    z-index: 1;
+                }
+               
+                
+               
+                #tb1 {
+                    margin-left: 370px;
+                }
+                
+                #imghome {
+                    position: relative;
+                    left: -213px;
+                    margin: -18px -15px;
+                }
+                
+               
+                
+                .tb1 {
+                    cursor: pointer;
+                    color: darkred;
+                    float: left;
+                    margin: 50px 10px;
+                    display: none;
+                }
+                
+               
+               
+                #text1{
+                    width: 333px;
+                    margin: -41px 592px;
+                }
+                
+                #img1 {
+                    position: relative;
+                    margin: 109px 12px;
+                   
+                   background-size: 10px;
+                }
+
+            
+                /* css menu drop */
+               
+                .next {
+                    right: 60px;
+                    top:150px
+                }
+                
+                .prev {
+                    left: 10px;
+                    top:150px
+                }
+                /* On hover, add a black background color with a little bit see-through */
+                
+                .prev:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+                
+               
+                /* css sale */
+                #body1{
+                    height:650px;
+                    width: 100%;
+                    margin:30px 0px;
+                    background-color:white;
+                }
+                .slide {
+                    height: 514px;
+                    position: absolute;
+                    margin-left: 58px;
+                    width: 90%;
+                    box-shadow: 0px 0px 2px gainsboro;
+                }
+                
+                
+                
+                
+                #show_class {
+                    position: relative;
+                    width: 100%;
+                    margin-top: 2px;
+                }
+                
+                .sp {
+                    /* display: inline-flex; */
+                    float: left;
+                    width: 318px;
+                    height: 253px;
+                    border: 1px solid white;
+                    background-position: center;
+                    background-color: white;
+                    background-size: 150px;
+                    background-repeat: no-repeat;
+                    left: 48px;
+                    position: relative;
+                }
+                
+                .sp:hover {
+                    background-color: #f3f3f3;
+                }
+                
+            
+                .sale {
+                    background-color: rgb(255, 66, 78);
+                    color: rgb(255, 255, 255);
+                    font-size: 13px;
+                    line-height: 20px;
+                    width: 50px;
+                    position: relative;
+                    z-index: 3;
+                    top: 0px;
+                    left: 0px;
+                    border-radius: 4px 0px 26px;
+                    padding: 2px 8px 4px 2px;
+                }
+                /* css danh muc san pham */
+                
+                #Bangsp {
+                    background-color: white;
+                    border: 1px solid white;
+                    height: 260px;
+                    border-radius: 10px;
+                    width: 100%;
+                }
+                
+                .danhmuc {
+                    float: left;
+                    width:80px;
+                    height: 80px;
+                    background-position: center;
+                    margin: 20px auto;
+                    border-radius: 40px;
+                    position: relative;
+                    left: 25px;
+                    background-color: #f3f3f3;
+                    
+                }
+                
+                .bao {
+                    width: 107px;
+                    height: 128px;
+                    float: left;
+                    margin: 0px 15px;
+                    cursor: pointer;
+                }
+                
+                #dmsp1 {
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                    background-image: url("img/snt.png");
+                  
+                }
+                
+                #dmsp2 {
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                    background-image: url("img/sonb.png");
+                   
+                }
+                
+                #dmsp3 {
+                    background-image: url("img/bb.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp4 {
+                    background-image: url("img/bot.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp5 {
+                    background-image: url("img/cc.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp6 {
+                    background-image: url("img/da.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp7 {
+                    background-image: url("img/pmtd.png");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                #dmsp8 {
+                    background-image: url("img/1_a1c0ff1c8dc94e81828f0ef27228f6b2_master.jpg");
+                    background-size: 40px;
+                    background-repeat: no-repeat;
+                }
+                
+                .chinhchu {
+                    text-align: center;
+                    margin: 10px 19px;
+                    font-size: 10px;
+                }
+                /* css anhdong */
+                
+                #anhdong {
+                    height: 300px;
+                }
+                
+                .chuyendong {
+                    width: 200px;
+                    opacity: 1;
+                }
+                /* css danh muc */
+                
+                .thumb {
+                    width: 48px;
+                    height: 48px;
+                    margin: 0px 10px;
+                }
+                
+                .dm {
+                    float: left;
+                    margin: 35px 7px;
+                    width: 90px;
+                    height: 50px;
+                }
+                /* css gợi ý */
+                
+                .hot {
+                    float: left;
+                    width: 172px;
+                    height: 377px;
+                    background-position: center;
+                    position: relative;
+                    left: 25px;
+                    top: 54px;
+                    background-color: white;
+                    background-size: 114px;
+                    background-repeat: no-repeat;
+                }
+                
+                .seticon {
+                    margin: 5px 45px;
+                }
+                
+                .sale20 {
+                    font-size: 13px;
+                    line-height: 20px;
+                    border-radius: 2px;
+                    background: rgb(255, 66, 78);
+                    color: white;
+                    padding: 0px 2px;
+                    width: 30px;
+                    height: 20px;
+                }
+                
+                #afterimg::after {
+                    content: "";
+                    position: absolute;
+                    margin: 92px -220px;
+                    /* left: 530px; */
+                    width: 150px;
+                    height: 2px;
+                    background-color: #a20b46;
+                }
+                
+                #setheight {
+                    height: 894px;
+                    width: 100%;
+                    background-color: white;
+                }
+                
+          
+            }

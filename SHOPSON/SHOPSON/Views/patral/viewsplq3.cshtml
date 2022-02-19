@@ -1,0 +1,61 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.SANPHAM>
+<div class="recommended_items">
+    <!--recommended_items-->
+    <h2 class="title text-center">recommended items</h2>
+
+    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Areas/img/sanpham/@item.ANH " style="width:50px;height:80px" />
+                                    <h2>@item.GIA.Value.ToString("N0")</h2>
+                                    <p>@item.TENSP</p>
+                                    <form action="/giohang/Additem" method="post">
+                                        <input name="masp" value="@item.MASP" style="display:none" />
+                                        <input id='@item.MASP' min='1' name="soluong" type='text' value='1' style="width:30px ;display:none" />
+                                        <input type="submit" value="Thêm vào giỏ Hàng" class="btn au-btn--submit" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="item">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Areas/img/sanpham/@item.ANH " style="width:50px;height:80px" />
+                                    <h2>@item.GIA</h2>
+                                    <p>@item.TENSP</p>
+                                    <form action="/giohang/Additem" method="post">
+                                        <input name="masp" value="@item.MASP" style="display:none" />
+                                        <input id='@item.MASP' min='1' name="soluong" type='text' value='1' style="width:30px ;display:none" />
+                                        <input type="submit" value="Thêm vào giỏ Hàng" class="btn au-btn--submit" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev" style="top:30%">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next" style="top:30%">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</div><!--/recommended_items-->

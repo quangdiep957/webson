@@ -1,0 +1,41 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.HOADON>
+<div class="row">
+    <div class="col-lg-9">
+        <h2 class="title-1 m-b-25">Đơn hàng đang chờ duyệt</h2>
+
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+
+                <thead>
+                    <tr>
+                        <th>Mã hóa đơn</th>
+                        <th>Tên khách hàng</th>
+                        <th>Tên sản phẩm</th>
+                        <th class="text-right">Số lượng</th>
+                        <th class="text-right">Giá tiền</th>
+                        <th class="text-right">Ngày lập</th>
+                        <th class="text-right">Liên hệ</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@item.MAHD</td>
+                            <td>@item.KHACHHANG.TENKH</td>
+                            <td>@item.DIACHI</td>
+                            <td class="text-right">@item.SOLUONG</td>
+                            <td class="text-right">@item.TONGTIEN.Value.ToString("N0")vnđ</td>
+                            <td class="text-right">@item.NGAYLAP</td>
+                            <td> <a href="tel: @item.KHACHHANG.SDT">Liên hệ ngay</a></td>
+                        </tr>
+
+                    </tbody>
+                }
+            </table>
+        </div>
+
+    </div>
+ 
+</div>
+

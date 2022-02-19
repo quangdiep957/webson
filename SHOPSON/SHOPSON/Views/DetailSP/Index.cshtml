@@ -1,0 +1,68 @@
+﻿
+@model List<SHOPSON.Areas.ADMIN.Models.SANPHAM>
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-9 padding-right">
+    @foreach (var item in Model)
+    {
+        <div class="product-details">
+            <!--product-details-->
+            <div class="col-sm-5">
+                <div class="view-product">
+                    <img src="~/Areas/img/sanpham/@item.ANH" alt="" />
+
+                </div>
+                @Html.Action("viewimg", "patral", new { id = item.MASP })
+
+
+            </div>
+
+
+            <div class="col-sm-7">
+                <div class="product-information">
+                    <!--/product-information-->
+                    <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                    <h2> @item.TENSP</h2>
+                    <p>@item.MOTA</p>
+                    <p>Web ID: @item.MLSP</p>
+                    <img src="images/product-details/rating.png" alt="" />
+                    <span>
+                        <span style="font-size:23px"> Giá :@item.GIA</span>
+                        <label>Số lượng:</label>
+                        <input type="text" value="3" />
+                    </span>
+                            <form action="/giohang/Additem" method="post">
+                                <input name="masp" value="@item.MASP" style="display:none" />
+                                <input onclick="var result = document.getElementById('@item.MASP'); var qty = result.value; if (!isNaN(qty) & amp; qty > 1 ) result.value--;return false;" type='button' value='-' />
+                                <input id='@item.MASP' min='1' name="soluong" type='text' value='1' style="width:30px" />
+                                <input onclick="var result = document.getElementById('@item.MASP'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' />
+                                <input type="submit" value="Thêm vào giỏ Hàng" class="btn au-btn--submit" />
+                            </form>
+                      
+                   
+                    <p><b>Availability:</b> @item.TRANGTHAI</p>
+                    <p><b>Brand:</b>SONBOSS</p>
+                    <a href=""><img src="~/Models/layout/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                </div><!--/product-information-->
+            </div>
+        </div>
+        <!--/product-details-->
+
+
+
+
+    @Html.Action("viewsplq", "patral" ,new {search = item.MLSP})
+    }
+    @Html.Action("viewsplq3","patral")
+    @Html.Action("viewkh", "khachhang")
+</div>
+
+
+
+
+
+

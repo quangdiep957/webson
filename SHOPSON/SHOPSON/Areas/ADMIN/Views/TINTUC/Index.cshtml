@@ -1,0 +1,100 @@
+﻿@model IEnumerable<SHOPSON.Areas.ADMIN.Models.TINTUC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-data__tool">
+    <div class="table-data__tool-left">
+        <div class="rs-select2--light rs-select2--md">
+            <select class="js-select2" name="property">
+                <option selected="selected">All Properties</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+        </div>
+        <div class="rs-select2--light rs-select2--sm">
+            <select class="js-select2" name="time">
+                <option selected="selected">Today</option>
+                <option value="">3 Days</option>
+                <option value="">1 Week</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+        </div>
+        @using (Html.BeginForm("Index", "LOAISP", FormMethod.Get))
+        {
+            <div class="row">
+                <input class="au-input au-input--xl" type="text" name="Search" placeholder="Search for datas &amp; reports..." />
+                <button class="au-btn--submit" type="submit">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+            </div>
+        }
+
+
+    </div>
+    <div class="table-data__tool-right">
+        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+            <i class="zmdi zmdi-plus"></i>  @Html.ActionLink("Create", "Create")
+        </button>
+        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+            <select class="js-select2" name="type">
+                <option selected="selected">Export</option>
+                <option value="">Option 1</option>
+                <option value="">Option 2</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive table-responsive-data2">
+<table class="table table-data2">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYDANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIEUDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANGTHAI)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYDANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ANH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIEUDE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANGTHAI)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+        
+    }
+    </table>
+
+    </div>

@@ -1,0 +1,31 @@
+﻿@{ 
+    Layout = "";
+}
+<div>
+   <ul id="test"></ul>
+    <button onclick="show"> show</button>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    function show() {
+        let option ={
+            method:'GET',
+            header: {
+                contentType:'application/json',
+
+            },
+            body:null
+    };
+        fetch('/API/SANPHAM', option)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                let html = "";
+                for (let i = 0; i < data.length; i++) {
+                    html+='<li> ${data[i].MASP}</li>'
+                }
+                $('#test').html(html);
+            })
+    }
+</script>

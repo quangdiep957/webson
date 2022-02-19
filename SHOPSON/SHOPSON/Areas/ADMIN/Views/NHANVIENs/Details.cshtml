@@ -1,0 +1,53 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+    <h4>NHANVIEN</h4>
+    <hr />
+    <div class="au-card au-card--bg-blue au-card-top-countries m-b-30" style="width:360px;background-image:-webkit-linear-gradient(131deg, #396AF2 0%, #F2D 100%)">
+        <div class="au-card-inner">
+            <div class="table-responsive">
+                <table class="table table-top-countries">
+                    <tbody>
+
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.TENNV)</td>
+
+                            <td class="text-right">  @Html.DisplayFor(model => model.TENNV)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.SDT)</td>
+
+                            <td class="text-right">  @Html.DisplayFor(model => model.SDT)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.CHUCVU)</td>
+
+                            <td class="text-right">  @Html.DisplayFor(model => model.CHUCVU)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.LUONG)</td>
+
+                            <td class="text-right">      @Html.DisplayFor(model => model.LUONG)</td>
+                        </tr>
+                        <tr>
+                            <td>    @Html.DisplayNameFor(model => model.ANH)</td>
+
+
+                            <td class="text-right">  <img src="~/Areas/img/nhanvien/@Html.DisplayFor(model=>model.ANH)" style="width:50%;height:30%" /></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MANV }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -1,0 +1,51 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.TINTUC
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TINTUC</h4>
+    <hr />
+
+    <div class="au-card au-card--bg-blue au-card-top-countries m-b-30" style="width:360px;background-image:-webkit-linear-gradient(131deg, #396AF2 0%, #F2D 100%)">
+        <div class="au-card-inner">
+            <div class="table-responsive">
+                <table class="table table-top-countries">
+                    <tbody>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.MOTA)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.MOTA)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.NGAYDANG)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.NGAYDANG)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.ANH)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.ANH)</td>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.TIEUDE)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.TIEUDE)</td>
+                        </tr>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.TRANGTHAI)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.TRANGTHAI)</td>
+                        </tr>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

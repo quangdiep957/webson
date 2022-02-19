@@ -1,0 +1,52 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.DANHMUC
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>DANHMUC</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID, htmlAttributes: new { @class = "lable_chu" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "text" } })
+                    @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TENDM, htmlAttributes: new { @class = "lable_chu" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TENDM, new { htmlAttributes = new { @class = "text" } })
+                    @Html.ValidationMessageFor(model => model.TENDM, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+        </div>
+    }
+
+
+</body>
+</html>

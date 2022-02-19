@@ -1,0 +1,57 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.LOAISP>
+<div class="col-sm-3">
+    <div class="left-sidebar">
+        <h2>Sản Phẩm</h2>
+        <div class="panel-group category-products" id="accordian">
+            <!--category-productsr-->
+            @foreach (var item in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                @item.TLSP
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="sportswear" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="#">Nike </a></li>
+                                <li><a href="#">Under Armour </a></li>
+                                <li><a href="#">Adidas </a></li>
+                                <li><a href="#">Puma</a></li>
+                                <li><a href="#">ASICS </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+
+        </div><!--/category-products-->
+
+
+
+        <div class="price-range">
+            <!--price-range-->
+            <h2>Chọn khoảng giá</h2>
+            <div class="well text-center">
+                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="5000000" data-slider-step="10" data-slider-value="[500000,3000000]" id="sl2"><br />
+                <b class="pull-left">0 VNĐ</b> <b class="pull-right">5000000 VNĐ</b>
+            </div>
+        </div><!--/price-range-->
+
+        <div class="">
+            <!--shipping-->
+            <img src="~/Models/layout/images/home/z2869855728255_90c0ae516ea8b6163e0c51f9a07079f7.jpg" alt="" />
+        </div><!--/shipping-->
+
+
+    </div>
+</div>
+

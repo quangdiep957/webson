@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SHOPSONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTHOADON">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="MAHD" Type="Int32" Nullable="false" />
+    <Property Name="MASP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SOLUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DONGIA" Type="Double" />
+    <Property Name="THANHTIEN" Type="Double" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="HOADON" Relationship="Self.FK_CTHOADON_HOADON1" FromRole="CTHOADON" ToRole="HOADON" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CTHOADON_SANPHAM" FromRole="CTHOADON" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="DANHMUC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENDM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GIOHANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="THETICH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TONGTIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAMAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HSD" Type="DateTime" Precision="0" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <Property Name="MASP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_GIOHANG_SANPHAM" FromRole="GIOHANG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="GIA" Type="Double" />
+    <Property Name="TONGTIEN" Type="Double" />
+    <Property Name="MANV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAKH" Type="Int32" />
+    <Property Name="MATK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MAMAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHUONGTHUCTT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="THETICH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_HOADON1" FromRole="HOADON" ToRole="CTHOADON" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="HOADON" ToRole="NHANVIEN" />
+    <NavigationProperty Name="THONGKE" Relationship="Self.FK_HOADON_THONGKE" FromRole="HOADON" ToRole="THONGKE" />
+  </EntityType>
+  <EntityType Name="imgcon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MASP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMG1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMG2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMG3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMG4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_imgcon_SANPHAM" FromRole="imgcon" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="Int32" Nullable="false" />
+    <Property Name="TENKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DANHGIA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="Lienhe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diachi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="anh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOAISP">
+    <Key>
+      <PropertyRef Name="MLSP" />
+    </Key>
+    <Property Name="MLSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TLSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MANCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK_LOAISP_NHACUNGCAP" FromRole="LOAISP" ToRole="NHACUNGCAP" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_LOAISP" FromRole="LOAISP" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LOAISPs" Relationship="Self.FK_LOAISP_NHACUNGCAP" FromRole="NHACUNGCAP" ToRole="LOAISP" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHUCVU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LUONG" Type="Double" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MASP" />
+    </Key>
+    <Property Name="MASP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIA" Type="Double" />
+    <Property Name="THETICH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MLSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CAPDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAMAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HSD" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_SANPHAM" FromRole="SANPHAM" ToRole="CTHOADON" />
+    <NavigationProperty Name="GIOHANGs" Relationship="Self.FK_GIOHANG_SANPHAM" FromRole="SANPHAM" ToRole="GIOHANG" />
+    <NavigationProperty Name="imgcons" Relationship="Self.FK_imgcon_SANPHAM" FromRole="SANPHAM" ToRole="imgcon" />
+    <NavigationProperty Name="LOAISP" Relationship="Self.FK_SANPHAM_LOAISP" FromRole="SANPHAM" ToRole="LOAISP" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Thanh_toan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PHUONGTHUC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="THONGKE">
+    <Key>
+      <PropertyRef Name="MATK" />
+    </Key>
+    <Property Name="MATK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAYLAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TONGSPBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TONGTIENBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_THONGKE" FromRole="THONGKE" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYDANG" Type="DateTime" Precision="0" />
+    <Property Name="ANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TIEUDE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_CTHOADON_HOADON1">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="MAHD" />
+      </Principal>
+      <Dependent Role="CTHOADON">
+        <PropertyRef Name="MAHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHOADON_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CTHOADON">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GIOHANG_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_THONGKE">
+    <End Role="THONGKE" Type="Self.THONGKE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THONGKE">
+        <PropertyRef Name="MATK" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MATK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_imgcon_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="imgcon" Type="Self.imgcon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="imgcon">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOAISP_NHACUNGCAP">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="LOAISP">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_LOAISP">
+    <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISP">
+        <PropertyRef Name="MLSP" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MLSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SHOPSONEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
+    <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
+    <EntitySet Name="GIOHANGs" EntityType="Self.GIOHANG" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="imgcons" EntityType="Self.imgcon" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="Lienhes" EntityType="Self.Lienhe" />
+    <EntitySet Name="LOAISPs" EntityType="Self.LOAISP" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="Thanh_toans" EntityType="Self.Thanh_toan" />
+    <EntitySet Name="THONGKEs" EntityType="Self.THONGKE" />
+    <EntitySet Name="TINTUCs" EntityType="Self.TINTUC" />
+    <AssociationSet Name="FK_CTHOADON_HOADON1" Association="Self.FK_CTHOADON_HOADON1">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CTHOADON" EntitySet="CTHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHOADON_SANPHAM" Association="Self.FK_CTHOADON_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CTHOADON" EntitySet="CTHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GIOHANG_SANPHAM" Association="Self.FK_GIOHANG_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="GIOHANG" EntitySet="GIOHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_NHANVIEN" Association="Self.FK_HOADON_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_THONGKE" Association="Self.FK_HOADON_THONGKE">
+      <End Role="THONGKE" EntitySet="THONGKEs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_imgcon_SANPHAM" Association="Self.FK_imgcon_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="imgcon" EntitySet="imgcons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOAISP_NHACUNGCAP" Association="Self.FK_LOAISP_NHACUNGCAP">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="LOAISP" EntitySet="LOAISPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_LOAISP" Association="Self.FK_SANPHAM_LOAISP">
+      <End Role="LOAISP" EntitySet="LOAISPs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SHOPSONModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SHOPSONModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

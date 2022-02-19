@@ -1,0 +1,44 @@
+﻿@model SHOPSON.Areas.ADMIN.Models.DANHMUC
+
+@{
+          
+
+                ViewBag.Title = "Index";
+                Layout = "~/Areas/ADMIN/Views/Shared/_Layout.cshtml";
+}
+}
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DANHMUC</h4>
+    <hr />
+    <div class="au-card au-card--bg-blue au-card-top-countries m-b-30" style="width:360px;background-image:-webkit-linear-gradient(131deg, #396AF2 0%, #F2D 100%)">
+        <div class="au-card-inner">
+            <div class="table-responsive">
+                <table class="table table-top-countries">
+                    <tbody>
+                        <tr>
+                            <td>  @Html.DisplayNameFor(model => model.TENDM)</td>
+                            <td class="text-right">    @Html.DisplayFor(model => model.TENDM)</td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+

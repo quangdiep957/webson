@@ -1,0 +1,40 @@
+﻿@model List<SHOPSON.Areas.ADMIN.Models.SANPHAM>
+@foreach (var item in Model)
+{
+    <div class="col-sm-4">
+        <div class="product-image-wrapper" style="height:340px">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="~/Areas/img/sanpham/@item.ANH" style="width:100px;height:130px" />
+                    <h2>@item.GIA.Value.ToString("N0")đ</h2>
+                    <p>@item.MOTA</p>
+                    
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>@item.GIA.Value.ToString("N0")đ</h2>
+                        <p>@item.MOTA</p>
+                        <form action="/DetailSP/Index" method="post">
+                            <input name="msp" value="@item.MASP" style="display:none"/>
+                            <input type="submit" value="Chi tiết" class="btn au-btn--submit" />
+                        </form>
+                      
+
+                    </div>
+                </div>
+            </div>
+            <div class="choose">
+                <form action="/giohang/Additem" method="post">
+                    <input name="masp" value="@item.MASP" style="display:none" />
+                    <input onclick="var result = document.getElementById('@item.MASP'); var qty = result.value; if (!isNaN(qty) ) result.value--;return false;" type='button' value='-' />
+                    <input id='@item.MASP' min='1' name="soluong" type='text' value='1' style="width:30px"/>
+                    <input onclick="var result = document.getElementById('@item.MASP'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' />
+                    <input type="submit" value="Thêm vào giỏ Hàng" class="btn au-btn--submit" />
+                </form>
+                    
+                
+               
+            </div>
+        </div>
+    </div>
+}
